@@ -159,16 +159,13 @@
   }
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio filter (plain grid, so cards stay in order and rows line up)
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
-
       let portfolioFilters = select('#portfolio-flters li', true);
+      let portfolioItems = select('.portfolio-item', true);
 
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
@@ -177,12 +174,11 @@
         });
         this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+        let filter = this.getAttribute('data-filter');
+        portfolioItems.forEach(function(item) {
+          item.classList.toggle('d-none', filter !== '*' && !item.matches(filter));
         });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
+        AOS.refresh();
       }, true);
     }
 
