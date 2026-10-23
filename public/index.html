@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Zubair Shahzad — AI Architect</title>
+  <meta content="Zubair Shahzad — AI Architect in Dubai: agentic AI, retrieval-augmented generation, MCP integrations, computer vision and data platforms on Microsoft Azure." name="description">
+  <meta name="keywords" content="AI Architect, AI Expert, Zubair Shahzad, agentic AI, RAG, MCP, Azure AI Foundry, machine learning, data engineering, solution architect, Dubai">
+  <meta name="author" content="Zubair Shahzad">
+  <meta property="og:title" content="Zubair Shahzad — AI Architect">
+  <meta property="og:description" content="Agentic AI, RAG, MCP integrations, computer vision and data platforms — production work for airports, telecoms, data companies and industrial dealers in the UAE.">
+  <link rel="canonical" href="https://zubairshehzad.com/">
+
+  <!-- Favicons -->
+  <link href="assets/img/profile-img2.jpg" rel="icon">
+  <link href="assets/img/profile-img2.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    :root { --accent:#0e7c86; --accent-2:#149ddd; --navy:#0b1f33; --ink:#1f2d3a; --muted:#6b7a89; --line:#e4eaf0; --soft:#f4f8fb; }
+    body { color: var(--ink); }
+    #header { background: linear-gradient(180deg, #0b1f33 0%, #10304f 100%); }
+    #header .profile img { border: 6px solid rgba(255,255,255,.12); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    #header .profile h1 { font-size: 22px; letter-spacing: .5px; }
+    #header .profile .social-links a { background: rgba(255,255,255,.08); }
+    #header .profile .social-links a:hover { background: var(--accent); }
+    .nav-menu a, .nav-menu a:focus { color: #c9d6e2; }
+    .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a { color: #fff; }
+    .nav-menu a:hover i, .nav-menu .active i { color: var(--accent); }
+    #hero:before { background: linear-gradient(120deg, rgba(11,31,51,.92) 0%, rgba(14,124,134,.78) 100%); }
+    #hero h1 { font-size: 60px; letter-spacing: -1px; }
+    #hero .hero-tag { font-size: 15px; letter-spacing: .5px; opacity: .9; margin: 6px 0 14px; font-family: "Open Sans", sans-serif; }
+    #hero p { font-size: 24px; }
+    #hero .typed { color: #8fe3ea; border-bottom: 3px solid #8fe3ea; }
+    .hero-cta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-hero { display: inline-block; padding: 10px 20px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.65); color: #fff; font-weight: 600; font-size: 14px; transition: all .2s; }
+    .btn-hero:hover { background: #fff; color: var(--navy); }
+    .btn-hero.primary { background: var(--accent); border-color: var(--accent); }
+    .btn-hero.primary:hover { background: #fff; color: var(--accent); }
+    @media (max-width: 768px) { #hero h1 { font-size: 36px; } #hero p { font-size: 18px; } }
+    section { padding: 70px 0; }
+    .section-title h2 { color: var(--navy); font-size: 34px; letter-spacing: -.5px; }
+    .section-title h2::after { background: linear-gradient(90deg, var(--accent), var(--accent-2)); width: 60px; height: 4px; border-radius: 2px; }
+    .section-title p { color: var(--muted); font-size: 16px; }
+    .section-bg { background: var(--soft); }
+    .about .content h3 { color: var(--navy); font-size: 28px; }
+    .about .content ul li { align-items: flex-start; }
+    .about .content ul i { color: var(--accent); }
+    .about img { border-radius: 14px; box-shadow: 0 16px 40px rgba(11,31,51,.15); }
+    .facts { background: var(--navy); color: #fff; }
+    .facts .section-title h2, .facts .section-title p { color: #fff; }
+    .facts .count-box { background: rgba(255,255,255,.06); border-radius: 14px; padding: 28px 24px 24px 24px; width: 100%; margin: 0 6px 12px; }
+    .facts .count-box i { color: #8fe3ea; background: transparent; font-size: 36px; }
+    .facts .count-box span { color: #fff; font-size: 40px; font-weight: 700; }
+    .facts .count-box p { color: #d7e3ee; }
+    .facts .count-box p strong { color: #fff; display: block; font-size: 16px; }
+    .resume .resume-title { color: var(--navy); font-size: 24px; }
+    .resume .resume-item { border-left: 2px solid var(--accent); }
+    .resume .resume-item::before { border: 2px solid var(--accent); }
+    .resume .resume-item h4 { color: var(--navy); font-size: 17px; }
+    .resume .resume-item h5 { background: #e3f3f4; color: var(--accent); border-radius: 999px; }
+    #portfolio-flters li { border-radius: 999px; background: #fff; border: 1px solid var(--line); padding: 7px 16px; margin: 0 4px 8px; }
+    #portfolio-flters li.filter-active, #portfolio-flters li:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .proj-card { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 14px; padding: 22px; height: 100%; display: flex; flex-direction: column; margin-bottom: 26px; transition: transform .2s, box-shadow .2s; }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(11,31,51,.12); }
+    .proj-card .proj-num { display: inline-block; background: var(--navy); color: #fff; font-weight: 700; border-radius: 6px; padding: 2px 9px; font-size: 12px; margin-bottom: 10px; width: max-content; letter-spacing: .5px; }
+    .proj-card h4 { font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.3; margin: 0 0 6px; }
+    .proj-card .proj-meta { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+    .proj-card p { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+    .proj-card .proj-stack { margin-top: auto; padding-top: 8px; }
+    .chip { display: inline-block; background: #e3f3f4; color: #0b5560; font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; margin: 0 6px 6px 0; }
+    .skill-list { list-style: none; padding: 0; }
+    .skill-list li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; font-size: 14px; line-height: 1.6; }
+    .skill-list strong { color: var(--accent); display: block; margin-bottom: 2px; }
+    .services h4.title { color: var(--navy); font-size: 20px; margin-bottom: 14px; }
+    .services h4.title a { color: var(--accent); }
+    .articles-list { padding-left: 18px; }
+    .articles-list li { margin-bottom: 10px; font-size: 14.5px; }
+    .articles-list a { color: var(--accent); font-weight: 600; }
+    .contact .info { border-radius: 14px; box-shadow: 0 10px 30px rgba(11,31,51,.08); }
+    .contact .info i { background: #e3f3f4; color: var(--accent); }
+    .contact .info h4 { color: var(--navy); }
+    .contact .info a { color: var(--accent); }
+    .back-to-top { background: var(--accent); }
+    #footer { background: var(--navy); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img2.jpg" alt="Zubair Shahzad" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Zubair Shahzad</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/zubairshahzad/" class="linkedin" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/zubairshahzadarain" class="github" target="_blank" rel="noopener"><i class="bx bxl-github"></i></a>
+          <a href="mailto:zubairshahzadarain@gmail.com" class="google-plus"><i class="bx bx-envelope"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Skills</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Open source & writing</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Zubair Shahzad</h1>
+      <p class="hero-tag">Agentic AI · RAG · MCP integrations · Computer vision · Data platforms — on Microsoft Azure</p>
+      <p>I'm a <span class="typed" data-typed-items="AI Architect, Senior AI Expert, Solution Architect, Generative &amp; Agentic AI Lead, Data Platform Architect"></span></p>
+      <div class="hero-cta">
+        <a class="btn-hero primary" href="#portfolio">See projects</a>
+        <a class="btn-hero" href="https://www.linkedin.com/in/zubairshahzad/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn-hero" href="https://github.com/zubairshahzadarain" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn-hero" href="mailto:zubairshahzadarain@gmail.com">Email</a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>I am an AI architect and senior AI expert with more than ten years in software engineering, the last seven of them designing and running production machine-learning, computer-vision, data-platform and generative-AI systems for large organisations in the UAE — airports, telecommunication, business data &amp; analytics, a holding group and, currently, an industrial equipment company. My present focus is agentic AI in the enterprise: multi-agent systems with human-in-the-loop control, retrieval-augmented generation, Model Context Protocol (MCP) integrations and Copilot adoption on Microsoft Azure AI Foundry.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Zubair Shahzad">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>AI Architect &amp; Senior AI Expert</h3>
+            <p class="fst-italic">
+              I cover the whole chain: business problem → target architecture (TOGAF-aligned) → data pipelines and models → application code → deployment with Docker, Kubernetes and CI/CD → measured result in hours saved, accuracy achieved or cost reduced.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Role:</strong> <span>AI Lead / AI Architect</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Consultancy:</strong> <span>Founder, CodePilot AI (Abu Dhabi)</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Dubai, UAE</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degrees:</strong> <span>MSc Cyber Security (UWL) · MSc Artificial Intelligence (UWL) · BS Software Engineering (Sukkur IBA)</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Certifications:</strong> <span>Microsoft Azure AI Apps &amp; Agents Developer (AI-103) · Azure Data Engineer (DP-203) · TOGAF</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <a href="mailto:zubairshahzadarain@gmail.com">zubairshahzadarain@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>In numbers</h2>
+          <p>Results reported on the projects below.</p>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+            <div class="count-box">
+              <i class="bi bi-cpu"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>+ years</strong> in software engineering, 7 in ML &amp; AI</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="bi bi-chat-dots"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>+ interactions a day</strong> on a voice RAG assistant</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="bi bi-clock-history"></i>
+              <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>+ hours a month</strong> saved by a multi-agent system</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="count-box">
+              <i class="bi bi-diagram-3"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>+ enterprise systems</strong> behind one MCP layer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Experience &amp; education</h2>
+          <p>Most recent first. Organisations are described by industry.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Professional experience</h3>
+            <div class="resume-item">
+              <h4>AI Lead / AI Architect</h4>
+              <h5>Aug 2026 – present</h5>
+              <p><em>Industrial Equipment Company, UAE</em></p>
+              <ul><li>Teams AI assistant platform on Azure AI Foundry: voice agents, MCP integrations, AI call centre, enterprise identity (SSO / OBO).</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Founder & AI Consultant</h4>
+              <h5>Jun 2026 – present</h5>
+              <p><em>CodePilot AI Information Technology Consultancy, Abu Dhabi</em></p>
+              <ul><li>Licensed AI consultancy: AI development, automation and data services for clients in the UAE.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Technical Lead — AI &amp; Solution Architect</h4>
+              <h5>May 2025 – Jun 2026</h5>
+              <p><em>IT Company — Airports account, UAE</em></p>
+              <ul><li>Multi-agent AI platform, RAG voice assistant, MCP integration layer, Copilot adoption.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Architect &amp; AI Automation Lead</h4>
+              <h5>Aug 2024 – Mar 2025</h5>
+              <p><em>Airports, UAE</em></p>
+              <ul><li>Data platform, computer vision, forecasting, network automation.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Solution Architect — Document Intelligence &amp; RPA</h4>
+              <h5>Nov 2022 – Aug 2024</h5>
+              <p><em>Holding Group, Abu Dhabi</em></p>
+              <ul><li>Document intelligence into Oracle ERP, e-signature automation.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Senior Data / Solution Engineer</h4>
+              <h5>Nov 2021 – Nov 2022</h5>
+              <p><em>Business Data &amp; Analytics Company, UAE</em></p>
+              <ul><li>ML models, Airflow / Kubernetes pipelines, scraping microservices, Power BI reporting.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>AI &amp; ML Solutions Engineer (full-stack)</h4>
+              <h5>May 2019 – Nov 2021</h5>
+              <p><em>Telecommunication, UAE</em></p>
+              <ul><li>Chatbots, image processing, RPA, enterprise web and Android applications.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Engineer</h4>
+              <h5>Mar 2018 – May 2019</h5>
+              <p><em>IT Company, Dubai</em></p>
+              <ul><li>Published mobile apps, IPTV, backend services.</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Developer</h4>
+              <h5>2017 – 2018</h5>
+              <p><em>IT Company, UAE</em></p>
+              <ul><li>Government document and insurance systems (.NET).</li></ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Developer (remote / freelance)</h4>
+              <h5>2014 – 2016</h5>
+              <p><em>Singapore · Belize · Pakistan</em></p>
+              <ul><li>Web and mobile development, usability and security testing.</li></ul>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>MSc Cyber Security</h4>
+              <p><em>University of West London — awarded with Merit</em></p>
+              <p>Thesis: big-data system to protect corporate networks using User and Entity Behaviour Analytics (CERT R4.2 dataset; supervised and unsupervised anomaly detection).</p>
+            </div>
+            <div class="resume-item">
+              <h4>MSc Artificial Intelligence</h4>
+              <p><em>University of West London</em></p>
+              <p>Modules passed: Big Data Analytics, Deep Learning, Research Methods; current: Artificial Intelligence, Responsible AI, Machine Learning; dissertation to follow.</p>
+            </div>
+            <div class="resume-item">
+              <h4>BS Software Engineering</h4>
+              <p><em>Sukkur IBA University, Pakistan — HEC merit scholarship; 2nd place, SIBA COM (IEEE)</em></p>
+            </div>
+
+            <h3 class="resume-title">Certifications &amp; training</h3>
+            <div class="resume-item pb-0">
+              <ul>
+                <li>Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103)</li>
+                <li>Microsoft Certified: Azure Data Engineer Associate (DP-203)</li>
+                <li>TOGAF Certified Enterprise Architecture Practitioner — The Open Group</li>
+                <li>IBM: Data Science Methodologies; Python for Data Science</li>
+                <li>Software Product Management (University of Alberta); Swift and iOS development (University of Toronto); Responsive web design (University of London)</li>
+                <li>Penetration testing and ethical hacking (Cybrary, Udemy); Python for security professionals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Most recent first. Each entry gives the problem, my role, the stack and the measured result. Client data and proprietary code are not published.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-ai">AI &amp; agents</li>
+              <li data-filter=".filter-data">Data &amp; automation</li>
+              <li data-filter=".filter-mobile">Mobile &amp; apps</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">01</span>
+              <h4>Enterprise AI assistant in Microsoft Teams with voice and MCP integrations</h4>
+              <p class="proj-meta">Industrial Equipment Company, UAE · 2026 – present</p>
+              <p>One secure assistant for every employee inside Teams — typed chat, voice-to-text and real-time voice on Azure AI Foundry agents. Every action runs under the employee's own permissions (Teams SSO, on-behalf-of token exchange). Custom MCP server for Microsoft 365 via Graph plus MCP connections to the CRM and data-warehouse platforms, data agents with row-level security, and an AI call centre (PBX → SIP → Teams Phone → Azure Communication Services → voice agent) that logs leads and hands over to a person.</p>
+              <div class="proj-stack"><span class="chip">Azure AI Foundry</span><span class="chip">Voice Live</span><span class="chip">MCP</span><span class="chip">Entra ID</span><span class="chip">Microsoft Graph</span><span class="chip">ACS</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">Container Apps</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">02</span>
+              <h4>Multi-agent AI platform for HR, legal, procurement and IT tickets</h4>
+              <p class="proj-meta">Airports, UAE · 2025 – 2026</p>
+              <p>Orchestrator and specialist agents with human-in-the-loop approval and fallback automation; organisation-wide Copilot adoption. More than 60% of routine document-processing tasks automated; over 200 hours saved per month.</p>
+              <div class="proj-stack"><span class="chip">Microsoft Agent Framework</span><span class="chip">Azure AI Foundry</span><span class="chip">A2A</span><span class="chip">MCP</span><span class="chip">content safety</span><span class="chip">Langfuse</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">03</span>
+              <h4>Real-time voice assistant with retrieval-augmented generation</h4>
+              <p class="proj-meta">Airports, UAE · 2025 – 2026</p>
+              <p>Document ingestion with contextual chunking, hybrid dense + sparse retrieval with re-ranking, grounded answers with citations, real-time voice interface and content-safety layer. 1,000+ interactions a day; 40% faster query resolution.</p>
+              <div class="proj-stack"><span class="chip">LlamaIndex</span><span class="chip">BGE-M3</span><span class="chip">FAISS</span><span class="chip">Azure AI Search</span><span class="chip">Ragas</span><span class="chip">Docker</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">04</span>
+              <h4>MCP integration layer and Teams AI agents</h4>
+              <p class="proj-meta">Airports, UAE · 2025 – 2026</p>
+              <p>OAuth-secured MCP server and tool library giving agents governed access to 10+ enterprise systems; Teams apps with SSO / on-behalf-of; meeting-minutes agent; open-source LLM serving with vLLM.</p>
+              <div class="proj-stack"><span class="chip">FastMCP</span><span class="chip">Microsoft Graph</span><span class="chip">Azure Functions</span><span class="chip">vLLM</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">05</span>
+              <h4>Computer vision and speech AI for airport security</h4>
+              <p class="proj-meta">Airports, UAE · 2024 – 2026</p>
+              <p>YOLO abandoned-object detection on CCTV (about 92% accuracy, 25% faster security response), a baggage X-ray screening assistant, and speech-to-text extraction of ATC radar timestamps (about 70% less extraction time).</p>
+              <div class="proj-stack"><span class="chip">YOLO</span><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span class="chip">speech-to-text</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">06</span>
+              <h4>Predictive taxi-demand model with agentic dispatch</h4>
+              <p class="proj-meta">Airports, UAE · 2024 – 2025</p>
+              <p>Demand forecasting on real-time taxi and flight feeds with an agent that turns forecasts into dispatch actions — about 30% better fleet allocation at peak hours.</p>
+              <div class="proj-stack"><span class="chip">XGBoost</span><span class="chip">LangChain</span><span class="chip">Kafka</span><span class="chip">Azure Data Lake</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-data">
+            <div class="proj-card">
+              <span class="proj-num">07</span>
+              <h4>Airport data platform and system integrations</h4>
+              <p class="proj-meta">Airports, UAE · 2024 – 2026</p>
+              <p>TOGAF-aligned lakehouse ingesting radar, queue-management, IoT, network, taxi and baggage-handling data into bronze / silver / gold layers with Airflow orchestration and Power BI consumption.</p>
+              <div class="proj-stack"><span class="chip">Azure Data Lake</span><span class="chip">Airflow</span><span class="chip">NiFi</span><span class="chip">Kafka</span><span class="chip">Power BI</span><span class="chip">Purview</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-data">
+            <div class="proj-card">
+              <span class="proj-num">08</span>
+              <h4>Network automation and AIOps platform</h4>
+              <p class="proj-meta">Airports, UAE · 2024 – 2025</p>
+              <p>CMDB discovery, port-based customer billing, VLAN / IPAM maintenance, configuration push with roll-back and a LangGraph agent for MAC / IP tracing — about 90% less manual reporting.</p>
+              <div class="proj-stack"><span class="chip">Python</span><span class="chip">Ansible</span><span class="chip">Netmiko</span><span class="chip">NETCONF</span><span class="chip">Airflow</span><span class="chip">LangGraph</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">09</span>
+              <h4>Financial document intelligence and e-signature automation</h4>
+              <p class="proj-meta">Holding Group, Abu Dhabi · 2022 – 2024</p>
+              <p>ML / OCR extraction of invoices and statements with standardisation into the ERP, and a PDF digital-signature workflow platform — about 80% less manual extraction effort.</p>
+              <div class="proj-stack"><span class="chip">OCR</span><span class="chip">PaddleOCR</span><span class="chip">Python</span><span class="chip">ASP.NET</span><span class="chip">Oracle ERP</span><span class="chip">UiPath</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-data">
+            <div class="proj-card">
+              <span class="proj-num">10</span>
+              <h4>Machine learning and data platform for global business data</h4>
+              <p class="proj-meta">Business Data &amp; Analytics Company, UAE · 2021 – 2022</p>
+              <p>Address parsing to the UPU standard (91% accuracy), text classification (88%+), OCR, scraping microservices (50,000+ records a day) and Airflow / Kubernetes pipelines serving 200+ analysts.</p>
+              <div class="proj-stack"><span class="chip">Python</span><span class="chip">Spark</span><span class="chip">FastText</span><span class="chip">Airflow</span><span class="chip">Kubernetes</span><span class="chip">RabbitMQ</span><span class="chip">Power BI</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+            <div class="proj-card">
+              <span class="proj-num">11</span>
+              <h4>Conversational AI and field-operations apps for a national telecom</h4>
+              <p class="proj-meta">Telecommunication, UAE · 2019 – 2021</p>
+              <p>WhatsApp appointment chatbot (500+ bookings a month at about 85% automation), image-processing audit app, RPA ticket automation and Android / ASP.NET business apps.</p>
+              <div class="proj-stack"><span class="chip">Flask</span><span class="chip">TensorFlow</span><span class="chip">Twilio</span><span class="chip">Flutter</span><span class="chip">UiPath</span><span class="chip">ASP.NET</span></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-mobile">
+            <div class="proj-card">
+              <span class="proj-num">12</span>
+              <h4>GoProjects Reporting — construction reporting app</h4>
+              <p class="proj-meta">IT Company, Dubai · 2018 – 2019</p>
+              <p>Published on the App Store and Google Play (Swift, Java) with a Node.js / MongoDB / Firebase backend; IPTV Smart-TV application and firmware-update pipeline.</p>
+              <div class="proj-stack"><span class="chip">Swift</span><span class="chip">Java</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">AWS S3</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Areas of expertise — the full technical stack I design and build with.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <ul class="skill-list">
+              <li><strong>Generative AI</strong>Agentic AI, Multi-Agent Systems, A2A, LLMs (GPT, LLaMA, Mistral, Claude), NLP, Intent Detection, Classification Models, RAG Pipelines, Prompt Engineering, Model Fine-Tuning, Model Optimization, AI Agents, Autonomous Systems, MCP tools integration and BGE-M3 embeddings, AI content safety, NeMo Guardrails</li>
+              <li><strong>AI Frameworks &amp; Tools</strong>LangChain, LangGraph, Microsoft Agent Framework, FastAPI, Flask, vLLM, Ollama, HuggingFace Transformers, PyTorch, TensorFlow, Kubeflow, Copilot, AI Foundry, FastMCP , Langfuse</li>
+              <li><strong>RAG Architecture</strong>Naive RAG, Advanced RAG, Agentic RAG, Hybrid Search (Dense + Sparse), Re-Ranking, Multi-Source / Federated Search, Contextual Chunking, Semantic Caching, Multi-Hop Retrieval, Document Ingestion Pipelines,pgvector</li>
+              <li><strong>RAG Frameworks</strong>LlamaIndex, Ragas, LangChain RAG Chains, (retrieval pipelines)</li>
+              <li><strong>ML, DL and LLM</strong>Random Forest, Decision Trees, Naive Bayes, AdaBoost, XGBoost, Linear Regression, CNN, RNN and YOLO</li>
+              <li><strong>Big Data and ETL</strong>SSRS, Power BI, Spark, ETL job, SSIS, Pentaho, Azure Synapse, Data Lake, Data warehouse, Azure Data Factory, Databricks, Apache Airflow, Python (Pandas, NumPy)</li>
+              <li><strong>Real-Time Applications</strong>Apache Kafka, RabbitMQ, Multicast, WebSockets, Message Queues, Real-Time Data Pipelines, NiFi</li>
+              <li><strong>Databases</strong>FAISS, MongoDB, MySQL, SQLite, Microsoft SQL, Oracle, Firebase, Cassandra, vector databases (Qdrant)</li>
+              <li><strong>Data &amp; governance</strong>Microsoft Purview, RBAC roles</li>
+              <li><strong>Cloud services</strong>AWS, Azure</li>
+              <li><strong>MLOps &amp; DevOps</strong>Docker, Kubernetes, CI/CD, MLflow</li>
+              <li><strong>Web Application (frontend and Restful)</strong>Python (Flask), C# ASP.NET MVC , Node.js (Express), PHP (CodeIgniter), Firebase Cloud Functions, HTML5, CSS, Bootstrap, JavaScript, jQuery , GRPC services, React.js</li>
+            </ul>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <ul class="skill-list">
+              <li><strong>Mobile Development</strong>Android (Java), iOS (Swift), Flutter, third-party APIs integration, Firebase , custom Android OS compilation</li>
+              <li><strong>System Designing</strong>Object Oriented Design Analysis, Patterns, UML Modeling, Formal method, System architecture</li>
+              <li><strong>Requirement Engineering</strong>Requirement collection, SRS and Scope documentation</li>
+              <li><strong>Software Testing</strong>Website Penetration Testing, Usability Testing, Performance Testing using JMeter</li>
+              <li><strong>IoT &amp; network automation</strong>Cisco, Juniper, Moxa — Python, Ansible, Netmiko, encryption of credential in memory. understanding of network protocols. NETCONF, RESTCONF, data collection from sensor and other devices</li>
+              <li><strong>Business Automation</strong>TagUI</li>
+              <li><strong>Other Programming languages</strong>Java, C#, Node.js, C++, Arduino, Python, Dart</li>
+              <li><strong>Language Libraries</strong>JSON, Jsoup</li>
+              <li><strong>Frameworks and Technologies</strong>RMI, CORBA, Hibernate, Facebook API, PayPal API, Stripe API, image processing, Job scheduling or cron jobs, OpenVPN</li>
+              <li><strong>Development Tools</strong>Git, Bitbucket, NetBeans IDE, SQL YOG, PHP My Admin, Notepad++, Sublime, Wamp, Xampp, Visual Studio, Eclipse, Android Studio, Xcode, Unity3D, Star UML, Packet Tracer, Nmap, Jira, MS Visual Studio</li>
+              <li><strong>Platform</strong>Windows, Kali Linux, Mac OS</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Open source & writing ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Open source &amp; writing</h2>
+          <p>Public code and articles. Employer and client code stays private.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h4 class="title">GitHub — <a href="https://github.com/zubairshahzadarain" target="_blank" rel="noopener">github.com/zubairshahzadarain</a></h4>
+            <ul class="articles-list">
+              <li><a href="https://github.com/zubairshahzadarain/Data_pipeline_and_analysis_using_airflow" target="_blank" rel="noopener">Data_pipeline_and_analysis_using_airflow</a> — Airflow DAGs for ingestion and analysis</li>
+              <li><a href="https://github.com/zubairshahzadarain/netmiko_adding_moxa_detection" target="_blank" rel="noopener">netmiko_adding_moxa_detection</a> — fork of the Netmiko SSH library adding Moxa industrial-switch detection</li>
+              <li><a href="https://github.com/zubairshahzadarain/pyspark" target="_blank" rel="noopener">pyspark</a>, <a href="https://github.com/zubairshahzadarain/Data_Science" target="_blank" rel="noopener">Data_Science</a>, <a href="https://github.com/zubairshahzadarain/python_O_Innovation" target="_blank" rel="noopener">python_O_Innovation</a> — ML and data notebooks</li>
+              <li><a href="https://play.google.com/store/apps/details?id=id.netnology.gamervpn" target="_blank" rel="noopener">Gamer VPN</a> (Flutter, Google Play) · <a href="https://apps.apple.com/lu/app/goprojects-repprting-system/id1470739096" target="_blank" rel="noopener">GoProjects Reporting</a> (App Store)</li>
+            </ul>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h4 class="title">Articles &amp; community</h4>
+            <ul class="articles-list">
+              <li><a href="https://zubair-learning.blogspot.com/2022/05/implementation-of-nameko.html" target="_blank" rel="noopener">Implementation of Nameko microservices</a> (2022)</li>
+              <li><a href="https://www.linkedin.com/pulse/application-big-data-secure-monitor-enterprise-system-zubair-shahzad" target="_blank" rel="noopener">Application of big data and UEBA to secure enterprise systems</a> (LinkedIn)</li>
+              <li>OWASP Chapter Leader, Pakistan — responsible disclosure of web vulnerabilities to major platforms</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>For AI, architecture and consulting enquiries.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+          <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Dubai, United Arab Emirates</p>
+              </div>
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p><a href="mailto:zubairshahzadarain@gmail.com">zubairshahzadarain@gmail.com</a></p>
+              </div>
+              <div class="email">
+                <i class="bi bi-linkedin"></i>
+                <h4>LinkedIn:</h4>
+                <p><a href="https://www.linkedin.com/in/zubairshahzad/" target="_blank" rel="noopener">linkedin.com/in/zubairshahzad</a></p>
+              </div>
+              <div class="email">
+                <i class="bi bi-github"></i>
+                <h4>GitHub:</h4>
+                <p><a href="https://github.com/zubairshahzadarain" target="_blank" rel="noopener">github.com/zubairshahzadarain</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits"></div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
